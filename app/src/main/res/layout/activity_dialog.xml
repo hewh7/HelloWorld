@@ -5,31 +5,38 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_ui"
+        android:id="@+id/btn_dialog1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UI"
+        android:text="style1"
         android:textAllCaps="false"/>
 
     <Button
-        android:id="@+id/btn_event"
+        android:id="@+id/btn_dialog2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="事件机制"
+        android:text="style2"
         android:textAllCaps="false"/>
 
     <Button
-        android:id="@+id/btn_data"
+        android:id="@+id/btn_dialog3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="数据存储"
+        android:text="style3"
         android:textAllCaps="false"/>
 
     <Button
-        android:id="@+id/btn_broad"
+        android:id="@+id/btn_dialog4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="广播"
+        android:text="style4"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_dialog5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="style5"
         android:textAllCaps="false"/>
 
 </LinearLayout>

@@ -1,74 +1,63 @@
 package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 
-import com.example.helloworld.recyclerview.RecyclerViewActivity;
+import com.example.helloworld.broadcast.BroadActivity;
+import com.example.helloworld.datastorage.DataStorageActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private Button mBtnTextView;
-    private Button mBtnButton;
-    private Button mBtnEditText;
-    private Button mBtnRadioButton;
-    private Button mBtnCheckBox;
-    private Button mBtnImageView;
-    private Button mBtnRecyclerView;
+
+    private Button mBtnUI;
+    private Button mBtnEvent;
+    private Button mBtnData;
+    private Button mBtnBroad;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mBtnTextView = this.<Button>findViewById(R.id.btn_textview);
-        mBtnButton = this.<Button>findViewById(R.id.btn_button);
-        mBtnEditText = this.<Button>findViewById(R.id.btn_edittext);
-        mBtnRadioButton = this.<Button>findViewById(R.id.btn_radiobutton);
-        mBtnCheckBox = this.<Button>findViewById(R.id.btn_checkbox);
-        mBtnImageView = this.<Button>findViewById(R.id.btn_imageview);
-        mBtnRecyclerView = this.<Button>findViewById(R.id.btn_recycleview);
-        setListeners();
-    }
-    private void setListeners(){
-        OnClick onClick = new OnClick();
-        mBtnTextView.setOnClickListener(onClick);
-        mBtnButton.setOnClickListener(onClick);
-        mBtnEditText.setOnClickListener(onClick);
-        mBtnRadioButton.setOnClickListener(onClick);
-        mBtnCheckBox.setOnClickListener(onClick);
-        mBtnImageView.setOnClickListener(onClick);
-        mBtnRecyclerView.setOnClickListener(onClick);
-    }
-    private class OnClick implements View.OnClickListener{
 
+        mBtnUI = this.<Button>findViewById(R.id.btn_ui);
+        mBtnEvent = this.<Button>findViewById(R.id.btn_event);
+        mBtnData = this.<Button>findViewById(R.id.btn_data);
+        mBtnBroad = this.<Button>findViewById(R.id.btn_broad);
+
+
+        OnClick onClick = new OnClick();
+
+        mBtnUI.setOnClickListener(onClick);
+        mBtnEvent.setOnClickListener(onClick);
+        mBtnData.setOnClickListener(onClick);
+        mBtnBroad.setOnClickListener(onClick);
+//请求权限
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+    }
+
+    class OnClick implements View.OnClickListener{
         @Override
-        public void onClick(View view) {
+        public void onClick(View v) {
             Intent intent = null;
-            switch (view.getId()){
-                case R.id.btn_textview:
-                    intent = new Intent(MainActivity.this,TextViewActivity.class);
+            switch (v.getId()){
+                case R.id.btn_ui:
+                    intent = new Intent(MainActivity.this, UIActivity.class);
                     break;
-                case R.id.btn_button:
-                    intent = new Intent(MainActivity.this,ButtonActivity.class);
+                case R.id.btn_event:
+                    intent = new Intent(MainActivity.this, EventActivity.class);
                     break;
-                case R.id.btn_edittext:
-                    intent = new Intent(MainActivity.this,EditTextActivity.class);
+                case R.id.btn_data:
+                    intent = new Intent(MainActivity.this, DataStorageActivity.class);
                     break;
-                case R.id.btn_radiobutton:
-                    intent = new Intent(MainActivity.this,RadioButtonActivity.class);
+                case R.id.btn_broad:
+                    intent = new Intent(MainActivity.this, BroadActivity.class);
                     break;
-                case R.id.btn_checkbox:
-                    intent = new Intent(MainActivity.this, CheckBoxActivity.class);
-                    break;
-                case R.id.btn_imageview:
-                    intent = new Intent(MainActivity.this,ImageViewActivity.class);
-                    break;
-                case R.id.btn_recycleview:
-                    intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
-                    break;
+
             }
             startActivity(intent);
         }

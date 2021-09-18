@@ -16,8 +16,8 @@ public class ButtonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button);
-        mBtn3 = this.<Button>findViewById(R.id.btn_3);
-        mBtn3.setOnClickListener(new View.OnClickListener() {
+          mBtn3 = this.<Button>findViewById(R.id.btn_3);
+          mBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(ButtonActivity.this,"btn3被点击了",Toast.LENGTH_SHORT).show();

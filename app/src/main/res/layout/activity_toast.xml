@@ -5,31 +5,27 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_ui"
+        android:id="@+id/btn_toast_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UI"
-        android:textAllCaps="false"/>
+        android:text="默认"/>
 
     <Button
-        android:id="@+id/btn_event"
+        android:id="@+id/btn_toast_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="事件机制"
-        android:textAllCaps="false"/>
+        android:text="改变位置"/>
 
     <Button
-        android:id="@+id/btn_data"
+        android:id="@+id/btn_toast_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="数据存储"
-        android:textAllCaps="false"/>
+        android:text="带图片（自定义）"/>
 
     <Button
-        android:id="@+id/btn_broad"
+        android:id="@+id/btn_toast_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="广播"
-        android:textAllCaps="false"/>
+        android:text="ToastUtil"/>
 
 </LinearLayout>

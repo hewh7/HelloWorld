@@ -2,34 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="15dp">
 
-    <Button
-        android:id="@+id/btn_ui"
+    <EditText
+        android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UI"
-        android:textAllCaps="false"/>
+        android:hint="输入内容"/>
 
     <Button
-        android:id="@+id/btn_event"
+        android:id="@+id/btn_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="事件机制"
-        android:textAllCaps="false"/>
+        android:layout_marginTop="10dp"
+        android:text="保存"/>
 
     <Button
-        android:id="@+id/btn_data"
+        android:id="@+id/btn_show"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="数据存储"
-        android:textAllCaps="false"/>
+        android:layout_marginTop="10dp"
+        android:text="显示"/>
 
-    <Button
-        android:id="@+id/btn_broad"
+    <TextView
+        android:id="@+id/tv_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="广播"
-        android:textAllCaps="false"/>
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
