@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnEvent;
     private Button mBtnData;
     private Button mBtnBroad;
+    private Button mBtnAnimate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnEvent = this.<Button>findViewById(R.id.btn_event);
         mBtnData = this.<Button>findViewById(R.id.btn_data);
         mBtnBroad = this.<Button>findViewById(R.id.btn_broad);
-
+        mBtnAnimate = this.<Button>findViewById(R.id.btn_animate);
 
         OnClick onClick = new OnClick();
 
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnEvent.setOnClickListener(onClick);
         mBtnData.setOnClickListener(onClick);
         mBtnBroad.setOnClickListener(onClick);
+        mBtnAnimate.setOnClickListener(onClick);
 //请求权限
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
     }
@@ -56,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_broad:
                     intent = new Intent(MainActivity.this, BroadActivity.class);
+                    break;
+                case R.id.btn_animate:
+                    intent = new Intent(MainActivity.this, ObjectAnimateActivity.class);
                     break;
 
             }
